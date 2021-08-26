@@ -1,16 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Fork Me! FCC: Test Suite Template</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <h3>Hello World, we are software developers!</h3>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Fork Me! FCC: Test Suite Template</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!--
+<body>
+  <nav id="navbar"><header>
+    Python Documentation
+  </header>
+  <a href="#Porting_Python_2_Code_to_Python_3" class="nav-link">Porting Python 2 Code to Python 3</a>
+  <a href="#Porting_Extension_Modules_to_Python_3" class="nav-link">Porting Extension Modules to Python 3</a>
+  <a href="#Curses_Programming_with_Python" class="nav-link">Curses Programming with Python</a>
+  <a href="#Descriptor_HowTo_Guide" class="nav-link">Descriptor HowTo Guide</a>
+  <a href="#Functional_Programming_HOWTO" class="nav-link">Functional Programming HOWTO</a>
+</nav>
+  <main id="main-doc">
+    <section id="Porting_Python_2_Code_to_Python_3" class="main-section">
+      <header>Porting Python 2 Code to Python 3</header>
+      <p>With Python 3 being the future of Python while Python 2 is still in active use, it is good to have your project
+        available for both major releases of Python. This guide is meant to help you figure out how best to support both
+        Python 2 & 3 simultaneously.</p>
+      <p>If you are looking to port an extension module instead of pure Python code, please see Porting Extension
+        Modules to Python 3.</p>
+
+        <ul>
+          <li>Only worry about supporting Python 2.7</li>
+          <li>Make sure you have good test coverage (coverage.py can help; python -m pip install coverage)</li>
+          <li>Learn the differences between Python 2 & 3</li>
+          <li>Use Futurize (or Modernize) to update your code (e.g. python -m pip install future)</li>
+          <li>Use Pylint to help make sure you don’t regress on your Python 3 support (python -m pip install pylint)</li>
+        </ul>
+
+      <code>
+          [x, y for x in seq1 for y in seq2]
+# Correct
+[(x, y) for x in seq1 for y in seq2]
+        </code>
+    </section>
+    <section id="Porting_Extension_Modules_to_Python_3" class="main-section">
+      <header>Porting Extension Modules to Python 3</header>
+      <p>We recommend the following resources for porting extension modules to Python 3:</p>
+      <p>The Migrating C extensions chapter from Supporting Python 3: An in-depth guide, a book on moving from Python 2
+        to Python 3 in general, guides the reader through porting an extension module.</p>
+      <code>
+      for expr1 in sequence1:
+    if not (condition1):
+        continue   # Skip this element
+    for expr2 in sequence2:
+        if not (condition2):
+            continue   # Skip this element
+        ...
+        for exprN in sequenceN:
+            if not (conditionN):
+                continue   # Skip this element
+
+            # Output the value of
+            # the expression.
+    </code>
+    </section>
+    <section id="Curses_Programming_with_Python" class="main-section">
+      <header>Curses Programming with Python</header>
+      <p>The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for
+        text-based terminals; such terminals include VT100s, the Linux console, and the simulated terminal provided by
+        various programs. Display terminals support various control codes to perform common operations such as moving
+        the cursor, scrolling the screen, and erasing areas. Different terminals use widely differing codes, and often
+        have their own minor quirks.</p>
+      <p>In a world of graphical displays, one might ask “why bother”? It’s true that character-cell display terminals
+        are an obsolete technology, but there are niches in which being able to do fancy things with them are still
+        valuable. One niche is on small-footprint or embedded Unixes that don’t run an X server. Another is tools such
+        as OS installers and kernel configurators that may have to run before any graphical support is available.
+      </p>
+      <code>
+        ( expression for expr in sequence1
+             if condition1
+             for expr2 in sequence2
+             if condition2
+             for expr3 in sequence3 ...
+             if condition3
+             for exprN in sequenceN
+             if conditionN )
+      </code>
+    </section>
+    <section id="Descriptor_HowTo_Guide" class="main-section">
+      <header>Descriptor HowTo Guide</header>
+      <p>
+        The “primer” gives a basic overview, moving gently from simple examples, adding one feature at a time. Start
+        here if you’re new to descriptors.
+      </p>
+      <p>
+        The second section shows a complete, practical descriptor example. If you already know the basics, start there.
+      </p>
+      <code>
+        for i in obj:
+    print(i)
+      </code>
+    </section>
+    <section id="Functional_Programming_HOWTO" class="main-section">
+      <header>Functional Programming HOWTO</header>
+      <p>
+        In this document, we’ll take a tour of Python’s features suitable for implementing programs in a functional
+        style. After an introduction to the concepts of functional programming, we’ll look at language features such as
+        iterators and generators and relevant library modules such as itertools and functools.
+      </p>
+      <p>
+        This section explains the basic concept of functional programming; if you’re just interested in learning about
+        Python language features, skip to the next section on Iterators.
+
+        Programming languages support decomposing problems in several different ways:
+      </p>
+      <code>
+        for i in iter(obj):
+    print(i)
+      </code>
+    </section>
+  </main>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+  <!--
 
     Hello Camper!
 
@@ -22,6 +131,7 @@
     - The freeCodeCamp Team
 
     -->
-    <script  src="js/index.js"></script>
-  </body>
+  <script src="js/index.js"></script>
+</body>
+
 </html>
