@@ -10,14 +10,17 @@ main{
     margin-left: 380px;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 600px){
     main{
         margin-left: 0px;
     }
     #navbar{
-        position:unset;
-        top:0%;
-        left:0%;
+        position:relative;
+        float:left;
+        margin-top:100px;
+        margin-bottom: 150px;
+        
+
         width:100%;
         display:block;
     }
