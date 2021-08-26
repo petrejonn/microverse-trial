@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <nav id="navbar"></nav>
   <main id="main-doc">
     <section id="Porting_Python_2_Code_to_Python_3" class="main-section">
       <header>Porting Python 2 Code to Python 3</header>
@@ -16,6 +17,15 @@
         Python 2 & 3 simultaneously.</p>
       <p>If you are looking to port an extension module instead of pure Python code, please see Porting Extension
         Modules to Python 3.</p>
+
+        <ul>
+          <li>Only worry about supporting Python 2.7</li>
+          <li>Make sure you have good test coverage (coverage.py can help; python -m pip install coverage)</li>
+          <li>Learn the differences between Python 2 & 3</li>
+          <li>Use Futurize (or Modernize) to update your code (e.g. python -m pip install future)</li>
+          <li>Use Pylint to help make sure you don’t regress on your Python 3 support (python -m pip install pylint)</li>
+        </ul>
+
       <code>
           [x, y for x in seq1 for y in seq2]
 # Correct
